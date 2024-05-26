@@ -17,9 +17,8 @@ export default styles = StyleSheet.create({
     position: 'absolute',
   },
   text_style: {
-    fontSize: windowWidth * 0.05,
-    color: '#D77400',
-    fontWeight: '800',
-    fontFamily: 'fonts1.ttf',
+    fontFamily: 'fonts1',
+    fontSize: windowWidth * 0.07,
+    color: '#E85E23',
   },
 });

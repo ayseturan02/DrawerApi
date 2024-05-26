@@ -19,7 +19,7 @@ export default styles = StyleSheet.create({
   text_style: {
     color: 'black',
     fontSize: windowWidth * 0.05,
-    fontWeight: '700',
+    fontWeight: '800',
   },
   text_position: {
     height: windowWidth * 0.2,

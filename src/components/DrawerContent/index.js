@@ -1,4 +1,4 @@
-import { View, Dimensions, Image} from 'react-native';
+import {View, Dimensions, Image, Text} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {
@@ -13,8 +13,15 @@ const DrawerContent = props => {
     <DrawerContentScrollView {...props}>
       <View style={styles.container}>
         <View style={styles.image_view}>
-          <View style={{margin: windowWidth * 0.015}}>
+          <View style={{margin: windowWidth * 0.025}}>
             <Image source={ben} style={styles.image_size} />
+            <View
+              style={styles.name_position}>
+              <Text
+                style={styles.name_style}>
+                aYse
+              </Text>
+            </View>
           </View>
         </View>
       </View>

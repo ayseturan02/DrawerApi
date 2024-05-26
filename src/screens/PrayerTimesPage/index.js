@@ -83,7 +83,7 @@ const PrayerTimesPage = () => {
           />
           <View style={{padding: windowWidth * 0.04}}>
             <Text style={styles.text_style}>
-              {search ? search : 'Elazığ '} için namaz vakitleri
+              {search ? search : 'Elazıg '} için namaz vakitleri
             </Text>
           </View>
         </View>

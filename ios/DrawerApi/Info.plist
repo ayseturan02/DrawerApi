@@ -50,6 +50,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>fonts1.ttf</string>
+		<string>fonts2.ttf</string>
 	</array>
 </dict>
 </plist>

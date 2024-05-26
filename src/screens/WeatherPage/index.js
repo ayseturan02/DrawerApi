@@ -78,12 +78,7 @@ const WeatherPage = () => {
           onChangeText={text => searchFilter(text)}
         />
         <View style={{padding: windowWidth * 0.023}}>
-          <Text
-            style={{
-              fontSize: windowWidth * 0.05,
-              color: '#0D5CDC',
-              fontWeight: '600',
-            }}>
+          <Text style={styles.text_style}>
             {search ? search : 'Elazığ '} Haftalık Hava Durumu
           </Text>
         </View>

@@ -11,4 +11,9 @@ export default styles = StyleSheet.create({
     borderColor: 'white',
     borderWidth: windowWidth * 0.003,
   },
+  text_style: {
+    fontSize: windowWidth * 0.05,
+    color: '#0D5CDC',
+    fontWeight: '600',
+  },
 });
