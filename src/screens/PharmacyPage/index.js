@@ -1,11 +1,27 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
+import FlatListPharmacy from '../../components/FlatListPharmacy';
+import Input from '../../components/Input';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const PharmacyPage = () => {
   return (
-    <View>
-      <Text>PharmacyPage</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        <View>
+          <Input />
+          <FlatListPharmacy />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

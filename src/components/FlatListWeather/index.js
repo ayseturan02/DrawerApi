@@ -1,11 +1,11 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View,FlatList} from 'react-native';
 import React from 'react';
-import PrayerCard from './../../components/PrayerCard';
 import {useState, useEffect} from 'react';
-import {all, PrayerApi} from './../../services';
+import {getWeather} from './../../services';
+import WeatherCard from './../../components/WeatherCard';
 
 const city = 'Elazig';
-const urlSent = `?data.city=${city}`;
+const urlSent = `?data.lang=tr&data.city=${city}`;
 
 const payload = {
   title: 'Blog Title',
@@ -13,23 +13,22 @@ const payload = {
   userId: 1,
 };
 
-const FlatListPrayer = (props) => {
-  const {city} = props;
-  const [prayer, setPrayer] = useState([]);
+const FlatListWeather = props => {
+  const [weather, setWeather] = useState([]);
 
   const fetchData = () => {
-    all
-      .allApi(urlSent)
+    getWeather
+      .getWeatherApi(urlSent)
       .then(data => {
         console.log('data', data);
-        setPrayer(data.result);
-        console.log('prayer', prayer);
+        setWeather(data.result);
+        console.log('weather', weather);
       })
       .catch(error => {
         console.error('Hata:', error);
       });
-    all
-      .allApi(payload)
+    getWeather
+      .getWeatherApi(payload)
       .then(data => {
         console.log('Veri alındı:', data);
       })
@@ -41,16 +40,23 @@ const FlatListPrayer = (props) => {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <FlatList
-      data={prayer}
+      data={weather}
       scrollEnabled={false}
-      keyExtractor={item => item.vakit}
+      keyExtractor={item => item.date}
       renderItem={({item}) => {
         console.log('item', item);
         return (
           <View>
-            <PrayerCard title={item.vakit} time={item.saat} city={item.city} />
+            <WeatherCard
+              icon={item.icon}
+              date={item.date}
+              description={item.description}
+              degree={item.degree}
+              day={item.day}
+            />
           </View>
         );
       }}
@@ -58,6 +64,6 @@ const FlatListPrayer = (props) => {
   );
 };
 
-export default FlatListPrayer;
+export default FlatListWeather;
 
 const styles = StyleSheet.create({});

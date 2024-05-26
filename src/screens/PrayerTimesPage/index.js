@@ -12,30 +12,23 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 import {Not, PlaceApi} from './../../service';
 import FlatListPrayer from '../../components/FlatListPrayer';
+import Input from '../../components/Input';
 
-const PrayerTimesPage = () => {
+const PrayerTimesPage = props => {
+  const {city} = props;
   return (
     <SafeAreaView
       style={{
+
         backgroundColor: '#3D3C41',
         height: windowHeight * 1,
         width: windowWidth * 1,
       }}>
-      <View style={{padding: windowWidth * 0.05}}>
-        <TextInput
-          style={{
-            backgroundColor: '#4C4B51',
-            height: windowWidth * 0.12,
-            width: windowWidth * 0.9,
-            borderRadius: windowWidth * 0.04,
-            borderColor: 'white',
-            borderWidth: windowWidth * 0.003,
-          }}
-          placeholder="Şehir Giriniz"
-          placeholderTextColor={'white'}
-        />
+      <Input />
+      <View>
+        <Text>{city}</Text>
+        <FlatListPrayer />
       </View>
-      <FlatListPrayer />
     </SafeAreaView>
   );
 };
