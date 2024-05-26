@@ -6,7 +6,6 @@ import {
   TextInput,
   FlatList,
   SafeAreaView,
-  ScrollView,
 } from 'react-native';
 import React from 'react';
 import {prayerImage} from './../../assets/images/index';
@@ -16,8 +15,6 @@ import styles from './styles';
 import PrayerCard from '../../components/PrayerCard';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
 const PrayerTimesPage = () => {
   const [prayer, setPrayer] = useState([]);
   const [filterData, setFilterData] = useState([]);
@@ -69,11 +66,7 @@ const PrayerTimesPage = () => {
       <View>
         <Image source={prayerImage} style={styles.image_size} />
         <View
-          style={{
-            alignItems: 'center',
-            alignSelf: 'center',
-            marginTop: 10,
-          }}>
+          style={styles.input_position}>
           <TextInput
             style={styles.input}
             placeholder="Enter city name"

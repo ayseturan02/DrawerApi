@@ -13,8 +13,6 @@ import styles from './styles';
 import WeatherCard from '../../components/WeatherCard';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
 const WeatherPage = () => {
   const [weather, setWeather] = useState([]);
   const [filterData, setFilterData] = useState([]);

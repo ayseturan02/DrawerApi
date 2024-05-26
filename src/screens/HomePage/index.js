@@ -18,7 +18,7 @@ const HomePage = () => {
 
         <View style={{top: windowWidth * 0.3}}>
           <Text style={{fontFamily: 'fonts2', fontSize: 350, color: 'white'}}>
-            llll
+           llll
           </Text>
         </View>
       </View>

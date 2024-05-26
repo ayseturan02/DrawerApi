@@ -2,6 +2,11 @@ import {StyleSheet, Text, View, Dimensions} from 'react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 export default styles = StyleSheet.create({
+  input_position:{
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
   input: {
     backgroundColor: '#496071',
     height: windowWidth * 0.15,
