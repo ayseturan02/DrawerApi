@@ -1,38 +1,100 @@
 import {
-  SafeAreaView,
-  StyleSheet,
+  Dimensions,
+  Image,
   Text,
   View,
-  Dimensions,
   TextInput,
-  Image,
+  FlatList,
+  SafeAreaView,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
+import {prayerImage} from './../../assets/images/index';
+import {useEffect, useState} from 'react';
+import {all} from './../../services';
+import styles from './styles';
+import PrayerCard from '../../components/PrayerCard';
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-import {Not, PlaceApi} from './../../service';
-import FlatListPrayer from '../../components/FlatListPrayer';
-import Input from '../../components/Input';
 
-const PrayerTimesPage = props => {
-  const {city} = props;
-  return (
-    <SafeAreaView
-      style={{
+const PrayerTimesPage = () => {
+  const [prayer, setPrayer] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  const [search, setSearch] = useState('');
 
-        backgroundColor: '#3D3C41',
-        height: windowHeight * 1,
-        width: windowWidth * 1,
-      }}>
-      <Input />
+  const fetchData = city => {
+    const urlSent = `?data.city=${city}`;
+    setPrayer([]);
+    all
+      .allApi(urlSent)
+      .then(data => {
+        console.log('data', data);
+        setPrayer(data.result);
+        setFilterData(data.result);
+        console.log('selam');
+      })
+      .catch(error => {
+        console.error('Hata:', error);
+      });
+  };
+
+  useEffect(() => {
+    fetchData('Elazig');
+  }, []);
+
+  useEffect(() => {
+    if (search) {
+      fetchData(search);
+    } else {
+      fetchData('Elazig');
+    }
+  }, [search]);
+
+  const itemView = ({item}) => {
+    console.log('item', item);
+    return (
       <View>
-        <Text>{city}</Text>
-        <FlatListPrayer />
+        <PrayerCard title={item.vakit} time={item.saat} city={item.city} />
+      </View>
+    );
+  };
+
+  const searchFilter = text => {
+    setSearch(text);
+  };
+
+  return (
+    <SafeAreaView>
+      <View>
+        <Image source={prayerImage} style={styles.image_size} />
+        <View
+          style={{
+            alignItems: 'center',
+            alignSelf: 'center',
+            marginTop: 10,
+          }}>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter city name"
+            placeholderTextColor={'white'}
+            value={search}
+            onChangeText={text => searchFilter(text)}
+          />
+          <View style={{padding: windowWidth * 0.04}}>
+            <Text style={styles.text_style}>
+              {search ? search : 'Elazığ '} için namaz vakitleri
+            </Text>
+          </View>
+        </View>
+        <FlatList
+          data={filterData}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={itemView}
+        />
       </View>
     </SafeAreaView>
   );
 };
 
 export default PrayerTimesPage;
-
-const styles = StyleSheet.create({});

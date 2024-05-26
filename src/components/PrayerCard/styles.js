@@ -4,7 +4,8 @@ const windowHeight = Dimensions.get('window').height;
 
 export default styles = StyleSheet.create({
   view: {
-    backgroundColor: '#6088A5',
+    backgroundColor: '#009318',
+    opacity: 0.5,
     height: windowWidth * 0.2,
     width: windowWidth * 0.8,
     borderRadius: windowWidth * 0.04,
@@ -16,8 +17,9 @@ export default styles = StyleSheet.create({
     borderRadius: windowWidth * 0.04,
   },
   text_style: {
-    color: '#203F55',
+    color: 'black',
     fontSize: windowWidth * 0.05,
+    fontWeight: '700',
   },
   text_position: {
     height: windowWidth * 0.2,
@@ -28,7 +30,8 @@ export default styles = StyleSheet.create({
     marginLeft: windowWidth * 0.15,
   },
   text_style1: {
-    color: '#E6E5DD',
+    color: 'black',
     fontSize: windowWidth * 0.05,
+    fontWeight: '700',
   },
 });

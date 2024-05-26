@@ -1,4 +1,4 @@
 const ben = require('./ben.jpg');
-const image = require('./image.png');
+const prayerImage = require('./prayerImage.png');
 
-export {ben, image};
+export {ben, prayerImage};

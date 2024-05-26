@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import React from 'react';
+import styles from './styles';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -7,31 +8,13 @@ const PharmacyCard = props => {
   const {name, dist, phone, address} = props;
   return (
     <View>
-      <View
-        style={{
-          alignContent: 'center',
-          alignItems: 'center',
-          marginTop: windowWidth * 0.05,
-        }}>
-        <View
-          style={{
-            backgroundColor: '#B6BBE3',
-            height: windowWidth * 0.3,
-            width: windowWidth * 0.9,
-            borderRadius: windowWidth * 0.04,
-          }}>
+      <View style={styles.view_position}>
+        <View style={styles.view}>
           <View style={{margin: windowWidth * 0.05}}>
-            <Text
-              style={{
-                color: 'black',
-                fontSize: windowWidth * 0.05,
-                fontWeight: '600',
-              }}>
+            <Text style={styles.text_style}>
               {name} / {dist}
             </Text>
-            <Text style={{color: 'gray', fontSize: windowWidth * 0.035}}>
-              {phone}
-            </Text>
+            <Text style={styles.tel_style}>{phone}</Text>
             <View>
               <Text>{address}</Text>
             </View>
@@ -43,5 +26,3 @@ const PharmacyCard = props => {
 };
 
 export default PharmacyCard;
-
-const styles = StyleSheet.create({});
