@@ -6,15 +6,19 @@ export default styles = StyleSheet.create({
   view: {
     backgroundColor: '#009318',
     opacity: 0.5,
-    height: windowWidth * 0.2,
+    height: windowWidth * 0.15,
     width: windowWidth * 0.8,
     borderRadius: windowWidth * 0.04,
+    borderColor: '#005F0E',
+    borderWidth:windowWidth*0.007
   },
   view2: {
     backgroundColor: '#C1C0B8',
-    height: windowWidth * 0.2,
+    height: windowWidth * 0.14,
     width: windowWidth * 0.45,
     borderRadius: windowWidth * 0.04,
+    borderColor: '#005F0E',
+    borderWidth:windowWidth*0.007
   },
   text_style: {
     color: 'black',
@@ -22,7 +26,7 @@ export default styles = StyleSheet.create({
     fontWeight: '800',
   },
   text_position: {
-    height: windowWidth * 0.2,
+    height: windowWidth * 0.13,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -15,4 +15,7 @@ export default styles = StyleSheet.create({
     color: '#3D3C41',
     fontWeight: '600',
   },
+  position:{alignItems: 'center', alignSelf: 'center', marginTop: 10},
+  title_padding:{padding: windowWidth * 0.02},
+  
 });

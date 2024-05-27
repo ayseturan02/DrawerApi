@@ -15,12 +15,8 @@ const DrawerContent = props => {
         <View style={styles.image_view}>
           <View style={{margin: windowWidth * 0.025}}>
             <Image source={ben} style={styles.image_size} />
-            <View
-              style={styles.name_position}>
-              <Text
-                style={styles.name_style}>
-                aYse
-              </Text>
+            <View style={styles.name_position}>
+              <Text style={styles.name_style}>aYse</Text>
             </View>
           </View>
         </View>

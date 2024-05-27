@@ -15,7 +15,7 @@ import styles from './styles';
 import PrayerCard from '../../components/PrayerCard';
 
 const windowWidth = Dimensions.get('window').width;
-const PrayerTimesPage = () => {
+ const PrayerTimesPage = () => {
   const [prayer, setPrayer] = useState([]);
   const [filterData, setFilterData] = useState([]);
   const [search, setSearch] = useState('');
@@ -47,7 +47,7 @@ const PrayerTimesPage = () => {
       fetchData('Elazig');
     }
   }, [search]);
-
+ 
   const itemView = ({item}) => {
     console.log('item', item);
     return (

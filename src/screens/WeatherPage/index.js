@@ -80,12 +80,12 @@ const WeatherPage = () => {
             {search ? search : 'Elazığ '} Haftalık Hava Durumu
           </Text>
         </View>
+        <FlatList
+          data={filterData}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={itemView}
+        />
       </View>
-      <FlatList
-        data={filterData}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={itemView}
-      />
     </View>
   );
 };

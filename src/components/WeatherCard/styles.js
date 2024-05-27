@@ -15,6 +15,7 @@ export default styles = StyleSheet.create({
     borderWidth: windowWidth * 0.005,
     width: windowWidth * 0.9,
     borderRadius: windowHeight * 0.02,
+    
   },
   date_style: {
     color: '#5C91E7',

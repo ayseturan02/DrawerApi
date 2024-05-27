@@ -1,6 +1,4 @@
 import {
-  Dimensions,
-  StyleSheet,
   Text,
   View,
   TextInput,
@@ -11,9 +9,6 @@ import {useEffect, useState} from 'react';
 import {dutyPharmacy} from './../../services';
 import styles from './styles';
 import PharmacyCard from '../../components/PharmacyCard';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 const PharmacyPage = () => {
   const [pharmacy, setPharmacy] = useState([]);
@@ -35,7 +30,6 @@ const PharmacyPage = () => {
         console.error('Hata:', error);
       });
   };
-
   useEffect(() => {
     fetchData('Elazig');
   }, []);
@@ -68,7 +62,7 @@ const PharmacyPage = () => {
 
   return (
     <View>
-      <View style={{alignItems: 'center', alignSelf: 'center', marginTop: 10}}>
+      <View style={styles.position}>
         <TextInput
           style={styles.input}
           placeholder="Enter city name"
@@ -76,7 +70,7 @@ const PharmacyPage = () => {
           value={search}
           onChangeText={text => searchFilter(text)}
         />
-        <View style={{padding: windowWidth * 0.02}}>
+        <View style={styles.title_padding}>
           <Text style={styles.text_style}>
             {search ? search : 'Elazığ '} Nöbetçi Eczaneler
           </Text>
